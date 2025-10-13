@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Send, User, Bot } from 'lucide-react';
 import { useChat } from '../../contexts/ChatContext';
 import { useDocuments } from '../../contexts/DocumentContext';
+import { documentService } from '../../services/api';
 
 const ChatInterface: React.FC = () => {
   const { messages, addMessage, isLoading } = useChat();
@@ -15,32 +17,46 @@ const ChatInterface: React.FC = () => {
 
   useEffect(scrollToBottom, [messages]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    addMessage({
+    // Add user message
+    const userMessage = {
       id: Date.now(),
-      type: 'user',
+      type: 'user' as const,
       content: input,
       timestamp: new Date()
-    });
+    };
+    addMessage(userMessage);
 
     setInput('');
 
-    // Simulate AI response
-    setTimeout(() => {
+    try {
+      // Call real RAG API
+      const response = await documentService.chat(input);
+      
+      // Add assistant message with real response
       addMessage({
         id: Date.now() + 1,
         type: 'assistant',
-        content: `Based on your ${documents.length} uploaded documents, I can help answer that question. This is a simulated response demonstrating the document-aware chat functionality.`,
+        content: response.answer,
         timestamp: new Date(),
-        sources: documents.slice(0, 2).map(doc => ({
-          name: doc.name,
-          relevance: Math.random() * 0.3 + 0.7
+        sources: response.sources.map((source: any) => ({
+          name: source.filename || source.title,
+          relevance: 0.95 // You can calculate this based on search scores
         }))
       });
-    }, 1000);
+    } catch (error) {
+      console.error('Chat error:', error);
+      // Add error message
+      addMessage({
+        id: Date.now() + 1,
+        type: 'assistant',
+        content: 'Sorry, I encountered an error processing your request. Please try again.',
+        timestamp: new Date()
+      });
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -97,7 +113,9 @@ const ChatInterface: React.FC = () => {
                     : 'bg-gradient-to-r from-white to-gray-50 text-gray-900 shadow-md border border-gray-200'
                 }`}
               >
-                <p className="whitespace-pre-wrap">{message.content}</p>
+                <div className="prose prose-sm max-w-none">
+                  <ReactMarkdown>{message.content}</ReactMarkdown>
+                </div>
                 <p className={`text-xs mt-1 ${
                   message.type === 'user' ? 'text-blue-200' : 'text-gray-500'
                 }`}>

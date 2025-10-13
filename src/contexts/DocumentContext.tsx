@@ -8,6 +8,11 @@ export interface Document {
   uploadDate: Date;
   status: 'uploading' | 'processing' | 'processed' | 'failed';
   chunks: number;
+  metadata?: {  // Make it optional
+    title: string;
+    author: string;
+    pages: number;
+  };
 }
 
 export interface Activity {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import SidebarHeader from './sidebar/SidebarHeader';
-import DocumentUpload from './sidebar/DocumentUpload';
 import FolderTree from './sidebar/FolderTree';
 import ModelControls from './sidebar/ModelControls';
 import CollectionStatus from './sidebar/CollectionStatus';
@@ -43,7 +42,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
         <div className="flex flex-col h-full overflow-hidden">
           <SidebarHeader />
           <div className="flex-1 overflow-y-auto px-4 pb-4 space-y-6">
-            <DocumentUpload />
             <FolderTree />
             <ModelControls />
             <CollectionStatus />

@@ -1,35 +1,86 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Brain, Zap } from 'lucide-react';
 import { useDocuments } from '../../contexts/DocumentContext';
+import { documentService } from '../../services/api';
 
 const ModelControls: React.FC = () => {
   const { addActivity } = useDocuments();
-  const [embeddingModel, setEmbeddingModel] = useState('openai-text-embedding-3-small');
-  const [inferenceModel, setInferenceModel] = useState('gpt-4-turbo');
+  const [embeddingModel, setEmbeddingModel] = useState('sentence-transformers/all-MiniLM-L6-v2');
+  const [inferenceModel, setInferenceModel] = useState('google/gemma-2b');
+  const [availableModels, setAvailableModels] = useState<string[]>([]);
+
+  useEffect(() => {
+    const loadModels = async () => {
+      try {
+        const models = await documentService.getEmbeddingModels();
+        setAvailableModels(models.models);
+      } catch (error) {
+        console.error('Failed to load models:', error);
+      }
+    };
+    loadModels();
+  }, []);
 
   const embeddingModels = [
-    { id: 'openai-text-embedding-3-small', name: 'OpenAI Text Embedding 3 Small', provider: 'OpenAI' },
-    { id: 'openai-text-embedding-3-large', name: 'OpenAI Text Embedding 3 Large', provider: 'OpenAI' },
-    { id: 'cohere-embed-english-v3', name: 'Cohere Embed English v3', provider: 'Cohere' },
+    { 
+      id: 'BAAI/bge-m3', 
+      name: 'BGE-M3', 
+      provider: 'BAAI'
+    },
+    { 
+      id: 'sentence-transformers/all-MiniLM-L6-v2', 
+      name: 'all-MiniLM-L6-v2', 
+      provider: 'Sentence Transformers'
+    },
   ];
 
   const inferenceModels = [
-    { id: 'gpt-4-turbo', name: 'GPT-4 Turbo', provider: 'OpenAI' },
-    { id: 'gpt-3.5-turbo', name: 'GPT-3.5 Turbo', provider: 'OpenAI' },
-    { id: 'claude-3-sonnet', name: 'Claude 3 Sonnet', provider: 'Anthropic' },
-    { id: 'gemini-pro', name: 'Gemini Pro', provider: 'Google' },
-  ];
+  { 
+    id: 'gemini', 
+    name: 'Gemini Flash', 
+    provider: 'Google',
+    description: 'Fast and accurate (requires API key)'
+  },
+  { 
+    id: 'microsoft/DialoGPT-medium', 
+    name: 'DialoGPT-Medium', 
+    provider: 'Microsoft',
+    description: 'Good for conversations, runs locally'
+  },
+  { 
+    id: 'microsoft/DialoGPT-large', 
+    name: 'DialoGPT-Large', 
+    provider: 'Microsoft', 
+    description: 'Better quality, requires more RAM'
+  },
+  { 
+    id: 'google/flan-t5-base', 
+    name: 'FLAN-T5-Base', 
+    provider: 'Google',
+    description: 'Fast instruction following'
+  }
+];
 
-  const handleEmbeddingModelChange = (modelId: string) => {
-    setEmbeddingModel(modelId);
-    const model = embeddingModels.find(m => m.id === modelId);
-    addActivity({
-      id: Date.now(),
-      type: 'model_change',
-      message: `Embedding model changed to ${model?.name}`,
-      timestamp: new Date()
-    });
-  };
+const handleEmbeddingModelChange = async (modelId: string) => {
+  const model = embeddingModels.find(m => m.id === modelId);
+  
+  if (window.confirm(`Are you sure you want to change the embedding model to ${model?.name}? This will recreate the vector database.`)) {
+    try {
+      await documentService.setEmbeddingModel(modelId);
+      setEmbeddingModel(modelId);
+      
+      addActivity({
+        id: Date.now(),
+        type: 'model_change',
+        message: `Embedding model changed to ${model?.name}`,
+        timestamp: new Date()
+      });
+    } catch (error) {
+      console.error('Failed to change model:', error);
+      alert('Failed to change model. Please try again.');
+    }
+  }
+};
 
   const handleInferenceModelChange = (modelId: string) => {
     setInferenceModel(modelId);

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, Upload } from 'lucide-react';
 import ChatInterface from './main/ChatInterface';
 import SearchPanel from './main/SearchPanel';
+import DocumentUpload from './sidebar/DocumentUpload';
 
 interface MainPanelProps {
   sidebarOpen: boolean;
@@ -9,7 +10,7 @@ interface MainPanelProps {
 }
 
 const MainPanel: React.FC<MainPanelProps> = ({ sidebarOpen, onToggleSidebar }) => {
-  const [activeTab, setActiveTab] = useState<'chat' | 'search'>('chat');
+  const [activeTab, setActiveTab] = useState<'chat' | 'search' | 'upload'>('upload');
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-white to-gray-50">
@@ -25,6 +26,17 @@ const MainPanel: React.FC<MainPanelProps> = ({ sidebarOpen, onToggleSidebar }) =
             </button>
           )}
           <div className="flex space-x-1 bg-gray-100 rounded-lg p-1">
+            <button
+              onClick={() => setActiveTab('upload')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-2 ${
+                activeTab === 'upload'
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300'
+              }`}
+            >
+              <Upload className="w-4 h-4" />
+              <span>Upload</span>
+            </button>
             <button
               onClick={() => setActiveTab('chat')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -51,7 +63,17 @@ const MainPanel: React.FC<MainPanelProps> = ({ sidebarOpen, onToggleSidebar }) =
 
       {/* Content */}
       <div className="flex-1 overflow-hidden">
-        {activeTab === 'chat' ? <ChatInterface /> : <SearchPanel />}
+        {activeTab === 'upload' ? (
+          <div className="h-full flex items-center justify-center p-8">
+            <div className="w-full max-w-2xl">
+              <DocumentUpload />
+            </div>
+          </div>
+        ) : activeTab === 'chat' ? (
+          <ChatInterface />
+        ) : (
+          <SearchPanel />
+        )}
       </div>
     </div>
   );
