@@ -371,5 +371,18 @@
             "pages": 0
         },
         "file_hash": "f48b9f55bc1e770eda93aac05056694f"
+    },
+    {
+        "filename": "22CD701-MAD-UNIT-1.pdf",
+        "chunks_stored": 142,
+        "upload_time": "2025-10-13 14:46:14.067696",
+        "metadata": {
+            "title": "PowerPoint Presentation",
+            "author": "neo",
+            "pages": 49,
+            "creation_date": "D:20250702121810+00'00'",
+            "modification_date": "D:20250702121810Z"
+        },
+        "file_hash": "219435ebb5d40353d1fbafdad592f0b0"
     }
 ]

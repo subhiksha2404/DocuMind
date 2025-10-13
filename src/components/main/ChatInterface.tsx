@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Send, User, Bot } from 'lucide-react';
+import { Send, User, Bot, Settings } from 'lucide-react';
 import { useChat } from '../../contexts/ChatContext';
 import { useDocuments } from '../../contexts/DocumentContext';
 import { documentService } from '../../services/api';
@@ -9,6 +9,9 @@ const ChatInterface: React.FC = () => {
   const { messages, addMessage, isLoading } = useChat();
   const { documents } = useDocuments();
   const [input, setInput] = useState('');
+  const [connectionStatus, setConnectionStatus] = useState<'agentic' | 'simple' | 'langgraph' | 'error'>('agentic');
+  const [useLangGraph, setUseLangGraph] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -33,9 +36,20 @@ const ChatInterface: React.FC = () => {
     setInput('');
 
     try {
-      // Call real RAG API
-      const response = await documentService.chat(input);
+      let response;
       
+      if (useLangGraph) {
+        setConnectionStatus('langgraph');
+        console.log('🚀 Using LangGraph agent system...');
+        response = await documentService.chatWithLangGraph(input);
+      } else {
+        setConnectionStatus('agentic');
+        console.log('🔍 Using custom agent system...');
+        response = await documentService.chat(input);
+      }
+      
+      console.log('🤖 Chat response received:', response);
+
       // Add assistant message with real response
       addMessage({
         id: Date.now() + 1,
@@ -44,19 +58,21 @@ const ChatInterface: React.FC = () => {
         timestamp: new Date(),
         sources: response.sources.map((source: any) => ({
           name: source.filename || source.title,
-          relevance: 0.95 // You can calculate this based on search scores
+          relevance: 0.95
         }))
       });
+
     } catch (error) {
       console.error('Chat error:', error);
-      // Add error message
+      setConnectionStatus('error');
+      
       addMessage({
         id: Date.now() + 1,
         type: 'assistant',
         content: 'Sorry, I encountered an error processing your request. Please try again.',
         timestamp: new Date()
       });
-    }
+    } 
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -75,22 +91,91 @@ const ChatInterface: React.FC = () => {
 
   return (
     <div className="flex flex-col h-full bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30">
+      {/* Connection Status Bar */}
+      <div className={`px-4 py-2 text-xs text-center ${
+        connectionStatus === 'agentic' ? 'bg-green-100 text-green-800 border-b border-green-200' :
+        connectionStatus === 'langgraph' ? 'bg-purple-100 text-purple-800 border-b border-purple-200' :
+        connectionStatus === 'simple' ? 'bg-yellow-100 text-yellow-800 border-b border-yellow-200' :
+        'bg-red-100 text-red-800 border-b border-red-200'
+      }`}>
+        {connectionStatus === 'agentic' && '🔄 Using Custom Agent System'}
+        {connectionStatus === 'langgraph' && '🚀 Using LangGraph Agent System'}
+        {connectionStatus === 'simple' && '🔄 Using Simple RAG System (Fallback)'}
+        {connectionStatus === 'error' && '❌ Connection Issues - Please try again'}
+      </div>
+
+      {/* Settings Panel */}
+      {showSettings && (
+        <div className="bg-white border-b border-gray-200 p-4 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-medium text-gray-900">Chat Settings</h3>
+            <button
+              onClick={() => setShowSettings(false)}
+              className="text-gray-400 hover:text-gray-600"
+            >
+              ✕
+            </button>
+          </div>
+          <div className="flex items-center space-x-2">
+            <label className="flex items-center space-x-2 text-sm text-gray-700">
+              <input
+                type="checkbox"
+                checked={useLangGraph}
+                onChange={(e) => setUseLangGraph(e.target.checked)}
+                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              <span>Use LangGraph (Advanced Multi-Agent System)</span>
+            </label>
+          </div>
+          <p className="text-xs text-gray-500 mt-2">
+            {useLangGraph 
+              ? 'LangGraph provides advanced workflow management and better observability.' 
+              : 'Custom agents offer fast, reliable performance for most use cases.'
+            }
+          </p>
+        </div>
+      )}
+
       {/* Chat messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 ? (
           <div className="text-center py-12">
-            <Bot className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+            <Bot className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               Welcome to DocuMind Chat
             </h3>
-            <p className="text-gray-600 max-w-md mx-auto">
-              Ask questions about your uploaded documents. I'll provide answers based on the content you've shared.
+            <p className="text-gray-600 max-w-md mx-auto mb-4">
+              Ask questions about your uploaded documents. I'll search through all indexed documents to provide answers.
             </p>
-            {documents.length === 0 && (
-              <p className="text-sm text-amber-600 mt-4">
-                Upload some documents first to get started!
-              </p>
-            )}
+            
+            {/* Quick Action Buttons */}
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              <button
+                onClick={() => setInput("What is professional ethics?")}
+                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors"
+              >
+                What is professional ethics?
+              </button>
+              <button
+                onClick={() => setInput("Explain active range finding")}
+                className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm hover:bg-purple-200 transition-colors"
+              >
+                Explain active range finding
+              </button>
+              <button
+                onClick={() => setInput("Compare CNN and RNN")}
+                className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors"
+              >
+                Compare CNN and RNN
+              </button>
+            </div>
+
+            <div className="text-sm text-gray-500 space-y-1">
+              <p>💡 <strong>Tips for better answers:</strong></p>
+              <p>• Ask specific questions about your documents</p>
+              <p>• Use complete sentences for better understanding</p>
+              <p>• Try rephrasing if you don't get good results</p>
+            </div>
           </div>
         ) : (
           messages.map((message) => (
@@ -101,34 +186,34 @@ const ChatInterface: React.FC = () => {
               }`}
             >
               {message.type === 'assistant' && (
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg animate-pulse">
-                  <Bot className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Bot className="w-4 h-4 text-white" />
                 </div>
               )}
               
               <div
-                className={`max-w-lg rounded-lg px-4 py-2 ${
+                className={`max-w-2xl rounded-lg px-4 py-3 ${
                   message.type === 'user'
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'bg-gradient-to-r from-white to-gray-50 text-gray-900 shadow-md border border-gray-200'
+                    : 'bg-white text-gray-900 shadow-md border border-gray-200'
                 }`}
               >
                 <div className="prose prose-sm max-w-none">
                   <ReactMarkdown>{message.content}</ReactMarkdown>
                 </div>
-                <p className={`text-xs mt-1 ${
+                <p className={`text-xs mt-2 ${
                   message.type === 'user' ? 'text-blue-200' : 'text-gray-500'
                 }`}>
                   {formatTime(message.timestamp)}
                 </p>
                 
                 {message.sources && message.sources.length > 0 && (
-                  <div className="mt-2 pt-2 border-t border-gray-200">
-                    <p className="text-xs text-gray-600 mb-1">Sources:</p>
+                  <div className="mt-3 pt-2 border-t border-gray-200">
+                    <p className="text-xs text-gray-600 mb-1 font-medium">Sources:</p>
                     {message.sources.map((source, index) => (
-                      <div key={index} className="text-xs text-gray-700">
+                      <div key={index} className="text-xs text-gray-700 flex items-center">
                         <span className="font-medium">{source.name}</span>
-                        <span className="text-gray-500 ml-1">
+                        <span className="text-gray-500 ml-2">
                           ({Math.round(source.relevance * 100)}% match)
                         </span>
                       </div>
@@ -139,7 +224,7 @@ const ChatInterface: React.FC = () => {
 
               {message.type === 'user' && (
                 <div className="w-8 h-8 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <User className="w-5 h-5 text-white" />
+                  <User className="w-4 h-4 text-white" />
                 </div>
               )}
             </div>
@@ -149,13 +234,18 @@ const ChatInterface: React.FC = () => {
         {isLoading && (
           <div className="flex space-x-3">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-pulse shadow-lg">
-              <Bot className="w-5 h-5 text-white" />
+              <Bot className="w-4 h-4 text-white" />
             </div>
-            <div className="bg-gradient-to-r from-white to-gray-50 rounded-lg px-4 py-2 shadow-md border border-gray-200">
-              <div className="flex space-x-1">
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+            <div className="bg-white rounded-lg px-4 py-3 shadow-md border border-gray-200">
+              <div className="flex items-center space-x-2">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                </div>
+                <span className="text-sm text-gray-600">
+                  {useLangGraph ? 'Processing with LangGraph...' : 'Thinking...'}
+                </span>
               </div>
             </div>
           </div>
@@ -165,25 +255,67 @@ const ChatInterface: React.FC = () => {
       </div>
 
       {/* Chat input */}
-      <div className="border-t border-gray-200 p-4">
+      <div className="border-t border-gray-200 p-4 bg-white">
+        {/* Action Buttons */}
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setShowSettings(!showSettings)}
+              className="p-2 text-gray-500 hover:text-gray-700 transition-colors"
+              title="Chat settings"
+            >
+              <Settings className="w-4 h-4" />
+            </button>
+          </div>
+          
+          {useLangGraph && (
+            <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
+              LangGraph Enabled
+            </span>
+          )}
+        </div>
+
         <form onSubmit={handleSubmit} className="flex space-x-2">
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Ask a question about your documents..."
-            className="flex-1 resize-none border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent max-h-32"
+            className="flex-1 resize-none border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent max-h-32 transition-all duration-200"
             rows={1}
             disabled={isLoading}
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className="group px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            className="group px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md shadow-blue-500/25 flex items-center justify-center"
           >
-            <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            {isLoading ? (
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            )}
           </button>
         </form>
+        
+        {/* Quick suggestions when input is empty */}
+        {!input.trim() && messages.length === 0 && (
+          <div className="mt-2 flex flex-wrap gap-2">
+            <span className="text-xs text-gray-500">Try asking:</span>
+            <button
+              onClick={() => setInput("What are the main topics in my documents?")}
+              className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200 transition-colors"
+            >
+              What are the main topics?
+            </button>
+            <button
+              onClick={() => setInput("Summarize the key concepts")}
+              className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200 transition-colors"
+            >
+              Summarize key concepts
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

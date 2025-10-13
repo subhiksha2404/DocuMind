@@ -295,6 +295,31 @@ class DocumentService {
       return { existing: [] };
     }
   }
+
+  async chatWithLangGraph(query: string, nContextChunks: number = 5): Promise<ChatResponse> {
+    const params = new URLSearchParams();
+    params.append('query', query);
+    params.append('n_context_chunks', nContextChunks.toString());
+
+    try {
+      console.log('🚀 Using LangGraph endpoint...');
+      const response = await fetch(`${API_BASE}/chat-langgraph?${params}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`LangGraph chat failed: ${response.statusText}`);
+      }
+
+      return response.json();
+    } catch (error) {
+      console.error('LangGraph failed, falling back to regular chat:', error);
+      return this.chat(query, undefined, nContextChunks);
+    }
+  }
   // Cleanup WebSocket
   disconnect(): void {
     if (this.ws) {

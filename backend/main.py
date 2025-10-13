@@ -28,7 +28,7 @@ from chromadb import PersistentClient
 from chromadb.utils import embedding_functions
 
 from agents.orchestrator import AgentOrchestrator
-
+from agents.langgraph_orchestrator import LangGraphOrchestrator
 # Import LangChain text splitter
 try:
     from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -70,6 +70,7 @@ os.makedirs(DB_BASE_DIR, exist_ok=True)
 os.makedirs(CHROMA_DB_DIR, exist_ok=True)
 
 agent_orchestrator = AgentOrchestrator()
+langgraph_orchestrator = LangGraphOrchestrator()
 
 # ---------- WebSocket Manager for Progress Updates ----------
 class ConnectionManager:
@@ -768,6 +769,18 @@ async def simple_chat_with_documents(query: str, conversation_id: Optional[str] 
     except Exception as e:
         logging.error(f"Simple chat failed: {e}")
         raise HTTPException(status_code=500, detail=f"Chat failed: {str(e)}")
+    
+@app.post("/chat-langgraph")
+async def chat_with_documents_langgraph(query: str, conversation_id: Optional[str] = None, n_context_chunks: int = 5):
+    """Chat with documents using LangGraph agentic RAG."""
+    try:
+        response_data = langgraph_orchestrator.process_query(query, n_context_chunks)
+        response_data["model_used"] = current_inference_model
+        return response_data
+    except Exception as e:
+        logging.error(f"LangGraph chat failed: {e}")
+        # Fallback to custom agents
+        return await chat_with_documents(query, conversation_id, n_context_chunks)
     
 @app.get("/debug-chroma")
 async def debug_chroma():
