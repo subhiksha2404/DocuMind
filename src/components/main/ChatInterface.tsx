@@ -1,17 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Send, User, Bot, Settings } from 'lucide-react';
+import { Send, User, Bot } from 'lucide-react';
 import { useChat } from '../../contexts/ChatContext';
 import { useDocuments } from '../../contexts/DocumentContext';
 import { documentService } from '../../services/api';
 
-const ChatInterface: React.FC = () => {
+interface ChatInterfaceProps {
+  useLangGraph: boolean;
+  connectionStatus: 'agentic' | 'simple' | 'langgraph' | 'error';
+}
+
+const ChatInterface: React.FC<ChatInterfaceProps> = ({useLangGraph, connectionStatus}) => {
   const { messages, addMessage, isLoading } = useChat();
   const { documents } = useDocuments();
   const [input, setInput] = useState('');
-  const [connectionStatus, setConnectionStatus] = useState<'agentic' | 'simple' | 'langgraph' | 'error'>('agentic');
-  const [useLangGraph, setUseLangGraph] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -39,11 +41,9 @@ const ChatInterface: React.FC = () => {
       let response;
       
       if (useLangGraph) {
-        setConnectionStatus('langgraph');
         console.log('🚀 Using LangGraph agent system...');
         response = await documentService.chatWithLangGraph(input);
       } else {
-        setConnectionStatus('agentic');
         console.log('🔍 Using custom agent system...');
         response = await documentService.chat(input);
       }
@@ -64,7 +64,6 @@ const ChatInterface: React.FC = () => {
 
     } catch (error) {
       console.error('Chat error:', error);
-      setConnectionStatus('error');
       
       addMessage({
         id: Date.now() + 1,
@@ -103,38 +102,6 @@ const ChatInterface: React.FC = () => {
         {connectionStatus === 'simple' && '🔄 Using Simple RAG System (Fallback)'}
         {connectionStatus === 'error' && '❌ Connection Issues - Please try again'}
       </div>
-
-      {/* Settings Panel */}
-      {showSettings && (
-        <div className="bg-white border-b border-gray-200 p-4 shadow-sm">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-medium text-gray-900">Chat Settings</h3>
-            <button
-              onClick={() => setShowSettings(false)}
-              className="text-gray-400 hover:text-gray-600"
-            >
-              ✕
-            </button>
-          </div>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2 text-sm text-gray-700">
-              <input
-                type="checkbox"
-                checked={useLangGraph}
-                onChange={(e) => setUseLangGraph(e.target.checked)}
-                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-              />
-              <span>Use LangGraph (Advanced Multi-Agent System)</span>
-            </label>
-          </div>
-          <p className="text-xs text-gray-500 mt-2">
-            {useLangGraph 
-              ? 'LangGraph provides advanced workflow management and better observability.' 
-              : 'Custom agents offer fast, reliable performance for most use cases.'
-            }
-          </p>
-        </div>
-      )}
 
       {/* Chat messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -256,16 +223,9 @@ const ChatInterface: React.FC = () => {
 
       {/* Chat input */}
       <div className="border-t border-gray-200 p-4 bg-white">
-        {/* Action Buttons */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-2">
-            <button
-              onClick={() => setShowSettings(!showSettings)}
-              className="p-2 text-gray-500 hover:text-gray-700 transition-colors"
-              title="Chat settings"
-            >
-              <Settings className="w-4 h-4" />
-            </button>
+            
           </div>
           
           {useLangGraph && (

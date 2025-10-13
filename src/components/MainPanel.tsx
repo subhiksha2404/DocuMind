@@ -3,14 +3,29 @@ import { Menu, Upload } from 'lucide-react';
 import ChatInterface from './main/ChatInterface';
 import SearchPanel from './main/SearchPanel';
 import DocumentUpload from './sidebar/DocumentUpload';
+import SettingsModal from './main/SettingModal'; 
 
 interface MainPanelProps {
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
+  showSettings: boolean;
+  onCloseSettings: () => void;
+  onOpenSettings: () => void;
 }
 
-const MainPanel: React.FC<MainPanelProps> = ({ sidebarOpen, onToggleSidebar }) => {
+const MainPanel: React.FC<MainPanelProps> = ({ sidebarOpen, onToggleSidebar, showSettings, onCloseSettings, onOpenSettings}) => {
   const [activeTab, setActiveTab] = useState<'chat' | 'search' | 'upload'>('upload');
+  const [useLangGraph, setUseLangGraph] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState<'agentic' | 'simple' | 'langgraph' | 'error'>('agentic');
+
+    React.useEffect(() => {
+    if (useLangGraph) {
+      setConnectionStatus('langgraph');
+    } else {
+      setConnectionStatus('agentic');
+    }
+  }, [useLangGraph]);
+
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-white to-gray-50">
@@ -70,11 +85,23 @@ const MainPanel: React.FC<MainPanelProps> = ({ sidebarOpen, onToggleSidebar }) =
             </div>
           </div>
         ) : activeTab === 'chat' ? (
-          <ChatInterface />
+          <ChatInterface 
+            useLangGraph={useLangGraph}
+            connectionStatus={connectionStatus}
+          />
         ) : (
           <SearchPanel />
         )}
       </div>
+      
+      {/* Settings Modal */}
+      {showSettings && (
+        <SettingsModal
+          useLangGraph={useLangGraph}
+          setUseLangGraph={setUseLangGraph}
+          onClose={onCloseSettings}
+        />
+      )}
     </div>
   );
 };

@@ -384,5 +384,16 @@
             "modification_date": "D:20250702121810Z"
         },
         "file_hash": "219435ebb5d40353d1fbafdad592f0b0"
+    },
+    {
+        "filename": "Spring Data JPA - Quick Example.docx",
+        "chunks_stored": 30,
+        "upload_time": "2025-10-13 18:02:09.197677",
+        "metadata": {
+            "title": "Document",
+            "author": "Unknown",
+            "pages": 8
+        },
+        "file_hash": "06a50b04e7d33f95daecb0b36d1e85bf"
     }
 ]

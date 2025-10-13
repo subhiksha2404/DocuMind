@@ -1,20 +1,24 @@
 import React from 'react';
 import { Settings } from 'lucide-react';
 
-const SettingsButton: React.FC = () => {
-  const handleSettings = () => {
-    // Settings modal would open here
-    console.log('Open settings modal');
-  };
+interface SettingsButtonProps {
+  onSettingsClick: () => void;
+}
 
+const SettingsButton: React.FC<SettingsButtonProps> = ({ onSettingsClick }) => {
   return (
-    <div className="p-4 border-t border-gray-200">
+    <div className="px-4 py-4 border-t border-gray-200">
       <button
-        onClick={handleSettings}
-        className="group w-full flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-purple-100 hover:to-blue-100 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+        onClick={onSettingsClick}
+        className="flex items-center space-x-3 w-full p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200 group"
       >
-        <Settings className="w-4 h-4 transition-transform duration-300 group-hover:rotate-90" />
-        <span className="text-sm font-medium">Settings</span>
+        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:from-blue-600 group-hover:to-purple-700 transition-colors">
+          <Settings className="w-4 h-4 text-white" />
+        </div>
+        <div className="flex-1 text-left">
+          <div className="font-medium text-gray-900">Settings</div>
+          <div className="text-sm text-gray-500">Configure chat and agent settings</div>
+        </div>
       </button>
     </div>
   );

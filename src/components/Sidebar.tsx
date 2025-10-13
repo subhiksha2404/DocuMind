@@ -10,9 +10,10 @@ import SettingsButton from './sidebar/SettingsButton';
 interface SidebarProps {
   isOpen: boolean;
   onToggle: () => void;
+  onSettingsClick: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle,onSettingsClick }) => {
   return (
     <>
       {/* Mobile backdrop */}
@@ -47,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
             <CollectionStatus />
             <ActivityTimeline />
           </div>
-          <SettingsButton />
+          <SettingsButton onSettingsClick={onSettingsClick}/>
         </div>
       </div>
     </>
