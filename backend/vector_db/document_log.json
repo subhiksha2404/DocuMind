@@ -336,5 +336,40 @@
             "modification_date": "D:20250925213109+05'30'"
         },
         "file_hash": "6b8df33871810dee1a5d2d4a9ac29e35"
+    },
+    {
+        "filename": "honeypotgpt.pdf",
+        "chunks_stored": 15,
+        "upload_time": "2025-10-13 11:11:29.511561",
+        "metadata": {
+            "title": "Microsoft Word - HoneypotGPT",
+            "author": "RENU PJ",
+            "pages": 5,
+            "creation_date": "D:20250404213136+05'30'",
+            "modification_date": "D:20250404213136+05'30'"
+        },
+        "file_hash": "141d474ef94377152332662a9545bf29"
+    },
+    {
+        "filename": "Java_Collections_Iteration_Notes.docx",
+        "chunks_stored": 9,
+        "upload_time": "2025-10-13 11:11:47.841278",
+        "metadata": {
+            "title": "Document",
+            "author": "Unknown",
+            "pages": 0
+        },
+        "file_hash": "12c9f396b518a84744d946119062a7f3"
+    },
+    {
+        "filename": "Difference between JPA, Hibernate and Spring Data JPA.docx",
+        "chunks_stored": 3,
+        "upload_time": "2025-10-13 11:19:35.593272",
+        "metadata": {
+            "title": "Document",
+            "author": "Unknown",
+            "pages": 0
+        },
+        "file_hash": "f48b9f55bc1e770eda93aac05056694f"
     }
 ]

@@ -27,6 +27,8 @@ from local_model_manager import model_manager
 from chromadb import PersistentClient
 from chromadb.utils import embedding_functions
 
+from agents.orchestrator import AgentOrchestrator
+
 # Import LangChain text splitter
 try:
     from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -66,6 +68,8 @@ INFERENCE_MODELS = Config.INFERENCE_MODELS
 # Ensure required directories exist
 os.makedirs(DB_BASE_DIR, exist_ok=True)
 os.makedirs(CHROMA_DB_DIR, exist_ok=True)
+
+agent_orchestrator = AgentOrchestrator()
 
 # ---------- WebSocket Manager for Progress Updates ----------
 class ConnectionManager:
@@ -703,6 +707,23 @@ async def get_inference_models():
 async def chat_with_documents(query: str, conversation_id: Optional[str] = None, n_context_chunks: int = 5):
     """Chat with documents using RAG."""
     try:
+        # Use the agent orchestrator (same functionality, better organization)
+        response_data = agent_orchestrator.process_query(query, n_context_chunks)
+        
+        # Add the current model info (same as before)
+        response_data["model_used"] = current_inference_model
+        
+        return response_data
+        
+    except Exception as e:
+        logging.error(f"Chat failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Chat failed: {str(e)}")
+    
+@app.post("/simple-chat")
+async def simple_chat_with_documents(query: str, conversation_id: Optional[str] = None, n_context_chunks: int = 5):
+    """Original simple RAG implementation as fallback."""
+    try:
+        # This is your EXACT original chat_with_documents code
         # Step 1: Semantic search to find relevant chunks
         query_embedding = safe_encode([query]).tolist()
         collection = get_collection()
@@ -745,33 +766,8 @@ async def chat_with_documents(query: str, conversation_id: Optional[str] = None,
         return response_data
         
     except Exception as e:
-        logging.error(f"Chat failed: {e}")
+        logging.error(f"Simple chat failed: {e}")
         raise HTTPException(status_code=500, detail=f"Chat failed: {str(e)}")
-    
-@app.get("/test-api")
-async def test_api():
-    """Test if HuggingFace API key is working with free models."""
-    try:
-        headers = {
-            "Authorization": f"Bearer {HF_API_KEY}",
-            "Content-Type": "application/json"
-        }
-        
-        # Test with a guaranteed free model
-        async with aiohttp.ClientSession() as session:
-            async with session.post(
-                "https://api-inference.huggingface.co/models/microsoft/DialoGPT-large",
-                headers=headers,
-                json={"inputs": "Hello, are you working?"}
-            ) as response:
-                if response.status == 200:
-                    return {"status": "success", "message": "API key is working with free models!"}
-                else:
-                    error_text = await response.text()
-                    return {"status": "error", "message": f"API error: {error_text}"}
-                    
-    except Exception as e:
-        return {"status": "error", "message": str(e)}
     
 @app.get("/debug-chroma")
 async def debug_chroma():
