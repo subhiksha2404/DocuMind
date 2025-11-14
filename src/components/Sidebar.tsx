@@ -5,15 +5,15 @@ import FolderTree from './sidebar/FolderTree';
 import ModelControls from './sidebar/ModelControls';
 import CollectionStatus from './sidebar/CollectionStatus';
 import ActivityTimeline from './sidebar/ActivityTimeline';
-import SettingsButton from './sidebar/SettingsButton';
+import ChatHistoryButton from './sidebar/ChatHistoryButton';
 
 interface SidebarProps {
   isOpen: boolean;
   onToggle: () => void;
-  onSettingsClick: () => void;
+  onChatHistoryClick: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle,onSettingsClick }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle,onChatHistoryClick }) => {
   return (
     <>
       {/* Mobile backdrop */}
@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle,onSettingsClick }) =
             <CollectionStatus />
             <ActivityTimeline />
           </div>
-          <SettingsButton onSettingsClick={onSettingsClick}/>
+          <ChatHistoryButton onChatHistoryClick={onChatHistoryClick}/>
         </div>
       </div>
     </>

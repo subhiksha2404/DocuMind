@@ -1,0 +1,620 @@
+{
+  "sessions": {
+    "7032a9a5-972d-4f20-ad1c-6cfecced195f": {
+      "id": "7032a9a5-972d-4f20-ad1c-6cfecced195f",
+      "user_id": "default_user",
+      "title": "What is professional ethics?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is professional ethics?",
+          "timestamp": "2025-11-14T09:58:35.680173",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, here's an understanding of professional ethics:\n\n## Professional Ethics\n\n- **Clear Definition**: The documents indicate that \"22CS603\" is the course code for \"PROFESSIONAL ETHICS,\" suggesting it's a field of study. One document indicates that being ethical in your profession can lead to surprising results, such as lawyers having to defend \"shady characters.\" Document 4 states that 'codes of ethics' exhibit, rights, duties, and obligations of the members of a profession and a professional society.\n\n- **Key Characteristics**:\n    *   Provides rights, duties, and obligations for members of a profession (Source 4).\n    *   Consists of 'codes of ethics' (Source 4).\n    *   Inspiration and guidance for individuals. (Source 4)\n    *   Provides statements and guidelines. (Source 4)\n    *   Offers interpretations for professionals and societies. (Source 4)\n\n- **Importance/Significance**:\n    *   Ethical professionals are considered better professionals (Source 3).\n    *   Ethical behavior helps avoid conflicts of interest (Source 3).\n    *   Codes of ethics contribute to ethical conduct and public good (Source 4).\n\n- **Applications/Examples**:\n    *   Lawyers, engineers, doctors, accountants, and journalists need to be sensitive to ethical requirements (Source 3).\n    *   Lawyers sometimes need to defend individuals with questionable character in order to give everyone a fair defense (Source 3).\n\n- **Summary**: Professional ethics, exemplified by course 22CS603, comprises codes that define rights, duties, and obligations within a profession. It's crucial for various professionals to maintain ethical standards, guide conduct and avoid conflicts of interest, thus contributing to a better professional environment and public good.\n",
+          "timestamp": "2025-11-14T09:58:35.700254",
+          "sources": [
+            {
+              "name": "22CS603 -Unit IV Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit V Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit III Professional Ethics.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "What is professional ethics?",
+          "timestamp": "2025-11-14T09:58:37.550927",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, here's an understanding of professional ethics:\n\n## Professional Ethics\n\n- **Clear Definition**: The documents indicate that \"22CS603\" is the course code for \"PROFESSIONAL ETHICS,\" suggesting it's a field of study. One document indicates that being ethical in your profession can lead to surprising results, such as lawyers having to defend \"shady characters.\" Document 4 states that 'codes of ethics' exhibit, rights, duties, and obligations of the members of a profession and a professional society.\n\n- **Key Characteristics**:\n    *   Provides rights, duties, and obligations for members of a profession (Source 4).\n    *   Consists of 'codes of ethics' (Source 4).\n    *   Inspiration and guidance for individuals. (Source 4)\n    *   Provides statements and guidelines. (Source 4)\n    *   Offers interpretations for professionals and societies. (Source 4)\n\n- **Importance/Significance**:\n    *   Ethical professionals are considered better professionals (Source 3).\n    *   Ethical behavior helps avoid conflicts of interest (Source 3).\n    *   Codes of ethics contribute to ethical conduct and public good (Source 4).\n\n- **Applications/Examples**:\n    *   Lawyers, engineers, doctors, accountants, and journalists need to be sensitive to ethical requirements (Source 3).\n    *   Lawyers sometimes need to defend individuals with questionable character in order to give everyone a fair defense (Source 3).\n\n- **Summary**: Professional ethics, exemplified by course 22CS603, comprises codes that define rights, duties, and obligations within a profession. It's crucial for various professionals to maintain ethical standards, guide conduct and avoid conflicts of interest, thus contributing to a better professional environment and public good.\n",
+          "timestamp": "2025-11-14T09:58:37.575874",
+          "sources": [
+            {
+              "name": "22CS603 -Unit IV Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit V Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit III Professional Ethics.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "What is professional ethics?",
+          "timestamp": "2025-11-14T09:58:38.256962",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, here's an understanding of professional ethics:\n\n## Professional Ethics\n\n- **Clear Definition**: The documents indicate that \"22CS603\" is the course code for \"PROFESSIONAL ETHICS,\" suggesting it's a field of study. One document indicates that being ethical in your profession can lead to surprising results, such as lawyers having to defend \"shady characters.\" Document 4 states that 'codes of ethics' exhibit, rights, duties, and obligations of the members of a profession and a professional society.\n\n- **Key Characteristics**:\n    *   Provides rights, duties, and obligations for members of a profession (Source 4).\n    *   Consists of 'codes of ethics' (Source 4).\n    *   Inspiration and guidance for individuals. (Source 4)\n    *   Provides statements and guidelines. (Source 4)\n    *   Offers interpretations for professionals and societies. (Source 4)\n\n- **Importance/Significance**:\n    *   Ethical professionals are considered better professionals (Source 3).\n    *   Ethical behavior helps avoid conflicts of interest (Source 3).\n    *   Codes of ethics contribute to ethical conduct and public good (Source 4).\n\n- **Applications/Examples**:\n    *   Lawyers, engineers, doctors, accountants, and journalists need to be sensitive to ethical requirements (Source 3).\n    *   Lawyers sometimes need to defend individuals with questionable character in order to give everyone a fair defense (Source 3).\n\n- **Summary**: Professional ethics, exemplified by course 22CS603, comprises codes that define rights, duties, and obligations within a profession. It's crucial for various professionals to maintain ethical standards, guide conduct and avoid conflicts of interest, thus contributing to a better professional environment and public good.\n",
+          "timestamp": "2025-11-14T09:58:38.280798",
+          "sources": [
+            {
+              "name": "22CS603 -Unit IV Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit V Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit III Professional Ethics.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "What is professional ethics?",
+          "timestamp": "2025-11-14T09:58:48.901945",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, here's an understanding of professional ethics:\n\n## Professional Ethics\n\n- **Clear Definition**: The documents indicate that \"22CS603\" is the course code for \"PROFESSIONAL ETHICS,\" suggesting it's a field of study. One document indicates that being ethical in your profession can lead to surprising results, such as lawyers having to defend \"shady characters.\" Document 4 states that 'codes of ethics' exhibit, rights, duties, and obligations of the members of a profession and a professional society.\n\n- **Key Characteristics**:\n    *   Provides rights, duties, and obligations for members of a profession (Source 4).\n    *   Consists of 'codes of ethics' (Source 4).\n    *   Inspiration and guidance for individuals. (Source 4)\n    *   Provides statements and guidelines. (Source 4)\n    *   Offers interpretations for professionals and societies. (Source 4)\n\n- **Importance/Significance**:\n    *   Ethical professionals are considered better professionals (Source 3).\n    *   Ethical behavior helps avoid conflicts of interest (Source 3).\n    *   Codes of ethics contribute to ethical conduct and public good (Source 4).\n\n- **Applications/Examples**:\n    *   Lawyers, engineers, doctors, accountants, and journalists need to be sensitive to ethical requirements (Source 3).\n    *   Lawyers sometimes need to defend individuals with questionable character in order to give everyone a fair defense (Source 3).\n\n- **Summary**: Professional ethics, exemplified by course 22CS603, comprises codes that define rights, duties, and obligations within a profession. It's crucial for various professionals to maintain ethical standards, guide conduct and avoid conflicts of interest, thus contributing to a better professional environment and public good.\n",
+          "timestamp": "2025-11-14T09:58:48.930149",
+          "sources": [
+            {
+              "name": "22CS603 -Unit IV Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit V Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit III Professional Ethics.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-14T09:58:35.647617",
+      "updated_at": "2025-11-14T09:58:48.930149",
+      "is_active": true
+    },
+    "fc472f42-4626-43eb-b1a0-02225d88d2f6": {
+      "id": "fc472f42-4626-43eb-b1a0-02225d88d2f6",
+      "user_id": "default_user",
+      "title": "Explain active range finding",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T10:14:34.060794",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Active Range Finding Explained\n\nBased on the provided documents, here's an explanation of active range finding:\n\n**Active range finding** is a technique used to measure the distance to an object. It's a key component in 3D reconstruction (Source 2).\n\n### Principle Behind Active Range Finding\n\n*   The principle behind **active range finding** involves projecting energy, such as light or sound, towards an object.\n*   It then measures the time it takes for the reflection of that energy to return to the sensor. (Source 3, Q2)\n*   By analyzing the time-of-flight of the projected energy, the distance to the object can be calculated. (Source 3, Q2)\n\n### Applications\n\n*   **Obstacle detection:** Active range finding helps in detecting obstacles by measuring their distance from the sensor in real-time. (Source 1, Q14)\n\n### Resources\n\n*   To learn more, there is a video about Active Rangefinding available here: https://www.youtube.com/watch?v=3S3xLUXAgHw (Source 4)\n\nIn essence, **active range finding** actively probes the environment to determine distances, enabling applications like obstacle avoidance and 3D reconstruction.\n",
+          "timestamp": "2025-11-14T10:14:34.085297",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T10:14:38.548208",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Active Range Finding Explained\n\nBased on the provided documents, here's an explanation of active range finding:\n\n**Active range finding** is a technique used to measure the distance to an object. It's a key component in 3D reconstruction (Source 2).\n\n### Principle Behind Active Range Finding\n\n*   The principle behind **active range finding** involves projecting energy, such as light or sound, towards an object.\n*   It then measures the time it takes for the reflection of that energy to return to the sensor. (Source 3, Q2)\n*   By analyzing the time-of-flight of the projected energy, the distance to the object can be calculated. (Source 3, Q2)\n\n### Applications\n\n*   **Obstacle detection:** Active range finding helps in detecting obstacles by measuring their distance from the sensor in real-time. (Source 1, Q14)\n\n### Resources\n\n*   To learn more, there is a video about Active Rangefinding available here: https://www.youtube.com/watch?v=3S3xLUXAgHw (Source 4)\n\nIn essence, **active range finding** actively probes the environment to determine distances, enabling applications like obstacle avoidance and 3D reconstruction.\n",
+          "timestamp": "2025-11-14T10:14:38.574421",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T10:14:39.240416",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Active Range Finding Explained\n\nBased on the provided documents, here's an explanation of active range finding:\n\n**Active range finding** is a technique used to measure the distance to an object. It's a key component in 3D reconstruction (Source 2).\n\n### Principle Behind Active Range Finding\n\n*   The principle behind **active range finding** involves projecting energy, such as light or sound, towards an object.\n*   It then measures the time it takes for the reflection of that energy to return to the sensor. (Source 3, Q2)\n*   By analyzing the time-of-flight of the projected energy, the distance to the object can be calculated. (Source 3, Q2)\n\n### Applications\n\n*   **Obstacle detection:** Active range finding helps in detecting obstacles by measuring their distance from the sensor in real-time. (Source 1, Q14)\n\n### Resources\n\n*   To learn more, there is a video about Active Rangefinding available here: https://www.youtube.com/watch?v=3S3xLUXAgHw (Source 4)\n\nIn essence, **active range finding** actively probes the environment to determine distances, enabling applications like obstacle avoidance and 3D reconstruction.\n",
+          "timestamp": "2025-11-14T10:14:39.274030",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T10:14:40.299637",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Active Range Finding Explained\n\nBased on the provided documents, here's an explanation of active range finding:\n\n**Active range finding** is a technique used to measure the distance to an object. It's a key component in 3D reconstruction (Source 2).\n\n### Principle Behind Active Range Finding\n\n*   The principle behind **active range finding** involves projecting energy, such as light or sound, towards an object.\n*   It then measures the time it takes for the reflection of that energy to return to the sensor. (Source 3, Q2)\n*   By analyzing the time-of-flight of the projected energy, the distance to the object can be calculated. (Source 3, Q2)\n\n### Applications\n\n*   **Obstacle detection:** Active range finding helps in detecting obstacles by measuring their distance from the sensor in real-time. (Source 1, Q14)\n\n### Resources\n\n*   To learn more, there is a video about Active Rangefinding available here: https://www.youtube.com/watch?v=3S3xLUXAgHw (Source 4)\n\nIn essence, **active range finding** actively probes the environment to determine distances, enabling applications like obstacle avoidance and 3D reconstruction.\n",
+          "timestamp": "2025-11-14T10:14:40.332511",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T10:14:41.380641",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Active Range Finding Explained\n\nBased on the provided documents, here's an explanation of active range finding:\n\n**Active range finding** is a technique used to measure the distance to an object. It's a key component in 3D reconstruction (Source 2).\n\n### Principle Behind Active Range Finding\n\n*   The principle behind **active range finding** involves projecting energy, such as light or sound, towards an object.\n*   It then measures the time it takes for the reflection of that energy to return to the sensor. (Source 3, Q2)\n*   By analyzing the time-of-flight of the projected energy, the distance to the object can be calculated. (Source 3, Q2)\n\n### Applications\n\n*   **Obstacle detection:** Active range finding helps in detecting obstacles by measuring their distance from the sensor in real-time. (Source 1, Q14)\n\n### Resources\n\n*   To learn more, there is a video about Active Rangefinding available here: https://www.youtube.com/watch?v=3S3xLUXAgHw (Source 4)\n\nIn essence, **active range finding** actively probes the environment to determine distances, enabling applications like obstacle avoidance and 3D reconstruction.\n",
+          "timestamp": "2025-11-14T10:14:41.420033",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-14T10:14:34.011022",
+      "updated_at": "2025-11-14T10:14:41.420033",
+      "is_active": true
+    },
+    "8bd971d3-2727-499e-8594-7dc6333b5e52": {
+      "id": "8bd971d3-2727-499e-8594-7dc6333b5e52",
+      "user_id": "default_user",
+      "title": "Explain active range finding",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T16:47:06.640564",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Explanation of Active Range Finding\n\nBased on the provided documents, here's an explanation of **active range finding**:\n\nActive range finding is a technique used in **3D reconstruction**. (Source 2)\n\n**Definition:**\n\n-   It is a method for measuring the distance to an object by projecting energy, such as light or sound, and measuring the time it takes for the reflection to return. (Source 3)\n\n**How it works:**\n\n-   Active range finding measures distances to objects in real-time. (Source 1)\n-   It helps detect obstacles based on their distance from the sensor. (Source 1)\n\n**Principle:**\n\n-   The fundamental principle involves projecting energy and measuring the return time of the reflection to determine the distance. (Source 3)\n\n**Application**\n- Active rangefinding can help in obstacle detection. (Source 1)\n\nIt is important to note that document provides a video link for those seeking visual information.\n",
+          "timestamp": "2025-11-14T16:47:06.667415",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-14T16:47:06.548469",
+      "updated_at": "2025-11-14T16:47:06.667415",
+      "is_active": true
+    },
+    "1d84b291-963d-4e05-9e73-2951a46e1e9c": {
+      "id": "1d84b291-963d-4e05-9e73-2951a46e1e9c",
+      "user_id": "default_user",
+      "title": "Explain active range finding",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T21:01:47.354717",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Here's an explanation of active range finding based on the provided documents:\n\n## Active Range Finding Explained\n\n**Active range finding** is a technique used to measure the distance to an object. The principle behind it, as explained in Source 3, involves projecting energy, such as light or sound, towards an object and then measuring the time it takes for the reflection of that energy to return to the sensor.\n\n**Key aspects of active range finding:**\n\n*   **Distance Measurement:** It provides real-time distance measurements to objects. (Source 1)\n*   **Obstacle Detection:** It is valuable for obstacle detection because it helps to determine the distance of objects from the sensor. (Source 1)\n*   **Energy Projection:** It relies on projecting energy (e.g., light or sound). (Source 3)\n*   **Reflection Measurement:** It involves measuring the time it takes for the reflection of the projected energy to return. (Source 3)\n\nSource 4 provides a video link about Active Range Finding : https://www.youtube.com/wat ch?v=3S3xLUXAgHw\n\nIn the context of 3D reconstruction, which is the focus of Unit IV (Source 2), active range finding is an important method for gathering data about the depth and shape of objects.\n",
+          "timestamp": "2025-11-14T21:01:47.396371",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-14T21:01:47.298932",
+      "updated_at": "2025-11-14T21:01:47.396371",
+      "is_active": true
+    },
+    "6caa8460-33ea-4112-a044-88919250333b": {
+      "id": "6caa8460-33ea-4112-a044-88919250333b",
+      "user_id": "default_user",
+      "title": "Explain active range finding",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T21:27:26.358989",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Explanation of Active Rangefinding\n\nBased on the provided documents, here's an explanation of **active rangefinding**:\n\n**Active rangefinding** is a technique used in 3D reconstruction to measure the distance to an object. It falls under Unit IV \u2013 3D RECONSTRUCTION as indicated in Source 2.\n\n*   **Principle:** Active rangefinding works by projecting energy, such as light or sound, onto an object and then measuring the time it takes for the reflection to return. (Source 3, Question 2)\n*   **Real-time Obstacle Detection:** Active rangefinding can help detect obstacles in real-time by measuring distances and identifying objects based on their distance from the sensor (Source 1, Question 14).\n*   **Mechanism:** Measuring the distance to an object by projecting energy (e.g., light or sound) and measuring the time it takes for the reflection to return.(Source 3)\n*   **Video Resource:** For more information, Source 4 provides a video link related to Active Rangefinding: `https://www.youtube.com/wat ch?v=3S3xLUXAgHw`.\n\nIn summary, active rangefinding is a distance measurement technique that projects energy and calculates distance based on the return time, enabling obstacle detection and contributing to 3D reconstruction.\n",
+          "timestamp": "2025-11-14T21:27:26.393866",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T21:27:50.842005",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Explanation of Active Rangefinding\n\nBased on the provided documents, here's an explanation of **active rangefinding**:\n\n**Active rangefinding** is a technique used in 3D reconstruction to measure the distance to an object. It falls under Unit IV \u2013 3D RECONSTRUCTION as indicated in Source 2.\n\n*   **Principle:** Active rangefinding works by projecting energy, such as light or sound, onto an object and then measuring the time it takes for the reflection to return. (Source 3, Question 2)\n*   **Real-time Obstacle Detection:** Active rangefinding can help detect obstacles in real-time by measuring distances and identifying objects based on their distance from the sensor (Source 1, Question 14).\n*   **Mechanism:** Measuring the distance to an object by projecting energy (e.g., light or sound) and measuring the time it takes for the reflection to return.(Source 3)\n*   **Video Resource:** For more information, Source 4 provides a video link related to Active Rangefinding: `https://www.youtube.com/wat ch?v=3S3xLUXAgHw`.\n\nIn summary, active rangefinding is a distance measurement technique that projects energy and calculates distance based on the return time, enabling obstacle detection and contributing to 3D reconstruction.\n",
+          "timestamp": "2025-11-14T21:27:50.858581",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Explain active range finding",
+          "timestamp": "2025-11-14T21:27:53.546309",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "## Explanation of Active Rangefinding\n\nBased on the provided documents, here's an explanation of **active rangefinding**:\n\n**Active rangefinding** is a technique used in 3D reconstruction to measure the distance to an object. It falls under Unit IV \u2013 3D RECONSTRUCTION as indicated in Source 2.\n\n*   **Principle:** Active rangefinding works by projecting energy, such as light or sound, onto an object and then measuring the time it takes for the reflection to return. (Source 3, Question 2)\n*   **Real-time Obstacle Detection:** Active rangefinding can help detect obstacles in real-time by measuring distances and identifying objects based on their distance from the sensor (Source 1, Question 14).\n*   **Mechanism:** Measuring the distance to an object by projecting energy (e.g., light or sound) and measuring the time it takes for the reflection to return.(Source 3)\n*   **Video Resource:** For more information, Source 4 provides a video link related to Active Rangefinding: `https://www.youtube.com/wat ch?v=3S3xLUXAgHw`.\n\nIn summary, active rangefinding is a distance measurement technique that projects energy and calculates distance based on the return time, enabling obstacle detection and contributing to 3D reconstruction.\n",
+          "timestamp": "2025-11-14T21:27:53.565356",
+          "sources": [
+            {
+              "name": "22AI909 COMPUTER VISION UNIT 4.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "metrics of loan default prediction",
+          "timestamp": "2025-11-14T21:27:53.585725",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, here's an overview of loan default prediction metrics and related business insights:\n\n## Key Metrics and Factors Influencing Loan Default\n\nThe documents highlight several factors and metrics crucial for understanding loan default prediction.\n\n*   **Payment Behavior (42.15%):** The `last_week_pay` feature is the most important predictor of loan default. Real-time payment monitoring is crucial.\n*   **Credit Utilization (13.09%):** `revolving_utilization` is the second most important feature, indicating that credit usage patterns are indicative of financial stress. Credit limit management is important.\n*   **Loan Subgrade (12.64%):** The existing risk grading system (`loan_subgrade`) is effective.\n*   **Interest Rate (9.93%):** Higher interest rates correlate with higher risk.\n*   **Loan Term (7.46%):** Loan duration impacts default probability, and longer loan terms correlate with higher risk.\n\n## Default Rate\n\n*   **Realistic Default Rate:** The model predicts a realistic default rate of 10.86%, evidenced by 4,335 defaults out of 39,933 predictions.\n\n## Business Insights and Actions\n\nThe documents point to specific actions that can be taken:\n\n*   **Monitor High-Risk Clients:** The model can identify high-risk clients. Approximately 7.5% of clients (~2,933) are classified as high risk.\n*   **Implement Early Warning Systems:** Early warning systems should be implemented using model scores.\n\nIn summary, the **loan default prediction model** relies heavily on payment behavior, credit utilization, loan subgrade, interest rates, and loan term. It provides a realistic default rate and allows for the identification and monitoring of high-risk clients, enabling early intervention strategies.\n",
+          "timestamp": "2025-11-14T21:27:53.606507",
+          "sources": [
+            {
+              "name": "MLA HACKATHON - LOAN DEFAULT PREDICTION REPORT.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-14T21:27:26.320906",
+      "updated_at": "2025-11-14T21:27:53.606507",
+      "is_active": true
+    },
+    "8bcf523b-8c2c-44d8-b6f6-ac696fc1e4bc": {
+      "id": "8bcf523b-8c2c-44d8-b6f6-ac696fc1e4bc",
+      "user_id": "default_user",
+      "title": "explain metrics in loan default prediction",
+      "messages": [
+        {
+          "role": "user",
+          "content": "explain metrics in loan default prediction",
+          "timestamp": "2025-11-14T22:24:13.450338",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Here's an explanation of metrics related to loan default prediction, based on the provided documents:\n\n## Key Metrics in Loan Default Prediction\n\nBased on the available information, here's a breakdown of important factors and metrics in loan default prediction:\n\n*   **Feature Importance:** This is a critical metric. It indicates the relative significance of different factors in predicting loan defaults.\n\n    *   **last_week_pay (42.15%):** This is the most important feature. The analysis shows that payment behavior is the strongest predictor of loan default. Real-time payment monitoring is crucial.\n    *   **revolving_utilization (13.09%):** This refers to the credit utilization rate. Higher revolving utilization, reflecting credit usage patterns, indicates potential financial stress and is a strong factor in predicting loan default. Effective credit limit management is needed.\n    *   **loan_subgrade (12.64%):** The existing risk grading system, as captured by loan subgrade, is effective in predicting loan default.\n    *   **interest_rate (9.93%):** Higher interest rates **correlate** with **higher risk**.\n    *   **loan_term (7.46%):** The duration of the loan impacts the probability of default. Longer **loan_terms** **correlate** with **higher risk**.\n\n*   **Default Rate:** The model predicts a realistic default rate, with a sample showing 4,335 defaults out of 39,933 predictions. This indicates that the model provides an industry-realistic risk assessment.\n*   **Risk Segmentation:**\n\n    *   The model identifies a segment of **high-risk clients**, representing approximately 7.5% (~2,933) of the total client base.\n*   **Business Insights and Actions**\n    *   **Monitor high-risk clients**: Identified by the model\n    *   **Implement early warning systems**: Early warning systems are implemented using model scores to predict loans that are at risk of default.\n\nThe documents suggest that the model's output can be used to implement early warning systems and monitor high-risk clients to mitigate potential losses.\n",
+          "timestamp": "2025-11-14T22:24:13.472160",
+          "sources": [
+            {
+              "name": "MLA HACKATHON - LOAN DEFAULT PREDICTION REPORT.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-14T22:24:13.421624",
+      "updated_at": "2025-11-14T22:24:13.472160",
+      "is_active": true
+    },
+    "4ad7dd89-6776-4375-82e2-83b941484f01": {
+      "id": "4ad7dd89-6776-4375-82e2-83b941484f01",
+      "user_id": "default_user",
+      "title": "what are pillars of professional ethics",
+      "messages": [
+        {
+          "role": "user",
+          "content": "what are pillars of professional ethics",
+          "timestamp": "2025-11-14T22:25:28.448824",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided document context, here's information about pillars of character which are related to professional ethics:\n\n## Pillars of Character in Professional Ethics\n\nThe document emphasizes the importance of character and adherence to the **'six pillars' of character**. These pillars are considered ethical values and are relevant to professional ethics.\n\nThe six pillars of character, as defined in the provided context, are:\n\n*   **Trustworthiness**\n*   **Respect**\n*   **Responsibility**\n*   **Fairness**\n*   **Caring**\n*   **Citizenship**\n\nThe document further elaborates on one of these pillars, **Respect**:\n\n*   **Respect** means showing high regard.\n\nIt is also mentioned that ethical considerations should be included in recruiting procedures, interviews, and hiring deliberations, as well as emphasized during training. This highlights the significance of these pillars in professional conduct.\n\nDocument 5, discussing UNIT I HUMAN VALUES, also provides related values that support ethical behavior, such as:\n\n*   Morals, values and Ethics\n*   Integrity\n*   Work ethic\n*   Service learning\n*   Civic virtue\n*   Living peacefully\n*   Caring\n*   Sharing\n*   Honesty\n*   Courage\n*   Valuing time\n*   Cooperation\n*   Commitment\n*   Empathy\n*   Self confidence\n*   Character\n*   Spirituality\n\nIt is important to note that the provided documents do not explicitly state \"pillars of professional ethics\" but rather highlight the \"six pillars of character\" as crucial ethical values which clearly shape professional conduct and ethics.\n",
+          "timestamp": "2025-11-14T22:25:28.462096",
+          "sources": [
+            {
+              "name": "22CS603 -Unit IV Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit V Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit I Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit III Professional Ethics.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "what are pillars of professional ethics",
+          "timestamp": "2025-11-14T22:26:16.704989",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided document context, here's information about pillars of character which are related to professional ethics:\n\n## Pillars of Character in Professional Ethics\n\nThe document emphasizes the importance of character and adherence to the **'six pillars' of character**. These pillars are considered ethical values and are relevant to professional ethics.\n\nThe six pillars of character, as defined in the provided context, are:\n\n*   **Trustworthiness**\n*   **Respect**\n*   **Responsibility**\n*   **Fairness**\n*   **Caring**\n*   **Citizenship**\n\nThe document further elaborates on one of these pillars, **Respect**:\n\n*   **Respect** means showing high regard.\n\nIt is also mentioned that ethical considerations should be included in recruiting procedures, interviews, and hiring deliberations, as well as emphasized during training. This highlights the significance of these pillars in professional conduct.\n\nDocument 5, discussing UNIT I HUMAN VALUES, also provides related values that support ethical behavior, such as:\n\n*   Morals, values and Ethics\n*   Integrity\n*   Work ethic\n*   Service learning\n*   Civic virtue\n*   Living peacefully\n*   Caring\n*   Sharing\n*   Honesty\n*   Courage\n*   Valuing time\n*   Cooperation\n*   Commitment\n*   Empathy\n*   Self confidence\n*   Character\n*   Spirituality\n\nIt is important to note that the provided documents do not explicitly state \"pillars of professional ethics\" but rather highlight the \"six pillars of character\" as crucial ethical values which clearly shape professional conduct and ethics.\n",
+          "timestamp": "2025-11-14T22:26:16.723219",
+          "sources": [
+            {
+              "name": "22CS603 -Unit IV Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit V Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit I Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit III Professional Ethics.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "give me an example for any five pillars in corporate world",
+          "timestamp": "2025-11-14T22:26:16.757966",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, the concept of \"pillars\" in the corporate world isn't directly defined with specific, numbered \"pillars.\" However, we can infer five key elements or guiding principles, from the content, that contribute to corporate excellence, ethics, and social responsibility. These elements, derived from the sources, could be considered analogous to pillars supporting a successful and ethical corporate structure.\n\n## Five Key Elements for Corporate Excellence and Ethical Conduct\n\nHere are five elements, inspired by the documents, that represent crucial aspects of corporate success and ethical behavior:\n\n*   **Ethical Foundation and Transparency:** Document 1 emphasizes stating personal **ethics** and beliefs clearly. This suggests that a strong ethical foundation is a crucial element. Companies must be upfront about their core values and how they translate into business practices. An example is a company publicly declaring its commitment to fair labor practices and transparently reporting on its supply chain.\n\n*   **Social Responsibility and Community Engagement:** Document 1 highlights supporting causes outside the business. This indicates the importance of **Corporate Social Responsibility (CSR)**, which is also mentioned in Documents 2, 4, and 5. An example is a company donating a portion of its profits to environmental conservation efforts or sponsoring educational programs in underprivileged communities.\n\n*   **Value-Based Decision Making:** Document 1 advocates for encouraging leaders to use value-based discretion in making decisions. This suggests that **ethical decision-making** at all levels of the organization is essential. An example is a manager choosing a slightly more expensive, but more sustainable, material for a product, aligning with the company's environmental values.\n\n*   **Moral Leadership and Integrity:** Moral leadership appears in documents 2, 4 and 5. Document 1 mentions demonstrating self-knowledge and spirituality in actions and encourages treating others as one would like to be treated. **Moral leadership** goes hand-in-hand with ethical decision making. An example is a CEO taking responsibility for a product defect, even if it means a short-term financial loss, thereby building trust with customers and employees.\n\n*   **Code of Conduct and Accountability:** Documents 2, 4, and 5 mentions **Code of Conduct** as a crucial component. This refers to the company's documented guidelines that outline how business is conducted and the company's accountability to stakeholders, as mentioned in Document 3. An example is a company having a clearly defined policy on conflict of interest and a whistle-blower program to encourage employees to report unethical behavior without fear of reprisal.\n\nThese five elements, while not explicitly called \"pillars\" in the text, represent critical components necessary for building a strong, ethical, and socially responsible corporation.\n",
+          "timestamp": "2025-11-14T22:26:16.799377",
+          "sources": [
+            {
+              "name": "22CS603 -Unit I Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit V Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-14T22:25:28.412076",
+      "updated_at": "2025-11-15T00:52:51.061974",
+      "is_active": true
+    },
+    "5a61d42e-44c4-42e6-96cb-2b9c7384d021": {
+      "id": "5a61d42e-44c4-42e6-96cb-2b9c7384d021",
+      "user_id": "default_user",
+      "title": "Summarize the key concepts of I2C bus",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Summarize the key concepts of I2C bus",
+          "timestamp": "2025-11-15T00:56:41.142043",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based solely on the provided documents, here's a summary of the key concepts related to the **I2C (Inter-Integrated Circuit)** bus:\n\n## Key Concepts of I2C Bus\n\nSource 1 mentions the I2C bus as a serial bus communication protocol within the context of **embedded networking**. Specifically, it's listed alongside other communication protocols like RS232, RS422, RS485, CAN Bus, and SPI (Serial Peripheral Interface).\n\n*   **Serial Bus Communication Protocol:** I2C is a type of serial communication, meaning data is transmitted one bit at a time.\n*   **Embedded Networking:** The primary context is its use in connecting devices within embedded systems.\n*   **Device Drivers:** The text notes that the need for **device drivers** is relevant to I2C, suggesting software components are needed to interface with I2C devices.\n\nIt is important to note that the documents do not provide in depth technical details of the I2C protocol itself, merely mentioning it in passing in the context of embedded systems. Therefore, I cannot fully explain the concept.\n",
+          "timestamp": "2025-11-15T00:56:41.180342",
+          "sources": [
+            {
+              "name": "DIGITAL NOTES UNIT IV_22EC002- EMBEDDED SYSTEMS.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "Unit 2 Cloud Foundations.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CD701-MAD-UNIT-1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-15T00:56:41.093257",
+      "updated_at": "2025-11-15T00:56:41.180342",
+      "is_active": true
+    },
+    "bbf98b16-88e9-484e-91c4-33d30c1da369": {
+      "id": "bbf98b16-88e9-484e-91c4-33d30c1da369",
+      "user_id": "default_user",
+      "title": "What are the main topics in my documents?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What are the main topics in my documents?",
+          "timestamp": "2025-11-15T01:54:01.881299",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, here's a summary of the main topics:\n\n## Course Related Topics\n\n*   **Course Objectives:**  Focuses on learning the fundamentals of natural language processing, discussing word-level analysis and different language models, and understanding the significance of syntactic and semantic analysis. The course also aims to teach discourse algorithms and various lexical resources (Source 3).\n\n*   **Lecture Plans:** Documents include detailed lecture plans. Source 1 outlines plans related to \"Senses of Engineering Ethics,\" \"Types of Inquiry,\" \"Moral Autonomy,\" \"Kohlberg's Theory,\" \"Gilligan's Theory,\" and \"Consensus and Controversy.\" Source 5 presents a lecture plan for Natural Language Processing that includes topics like \"Ambiguities in NLP\", \"Regular Expressions\" and \"Words - Corpora\". Lecture plans also include data about Number of Periods, Proposed Dates, Actual Dates, CO pertaining to each topic and the Taxonomy level along with the Mode of Delivery. (Source 1, Source 5)\n\n*   **Artificial Intelligence Course:** There are references to an \"Artificial Intelligence\" course with subject code 22AI005 (Source 3).\n\n## Document Structure and Table of Contents\n\n*   **Table of Contents Elements:** One document segment describes a table of contents outlining a course including sections like \"Contents,\" \"Course Objectives,\" \"Pre Requisites,\" \"Syllabus,\" \"Course Outcomes,\" \"CO-PO/PSO Mapping,\" \"Lecture Plan,\" \"Activity Based Learning,\" and \"Lecture Notes.\" (Source 4)\n\n## Natural Language Processing (NLP)\n* **Fundamental Concepts:** Topics related to Natural Language Processing are covered including ambiguities, regular expressions and corpora.\n\n## Ethics\n\n* **Engineering Ethics:** Topics relating to engineering ethics like Moral issues and moral dilemmas are referenced.\n\n## Topics in Message Queues\n\n* **Topic and Subscription:** Document 2 mentions the concept of a \"topic\" in the context of message queues, defining it as \"a named resource to which messages are sent by publishers.\"\n\nIn summary, the documents seem to be related to course planning, specifically including courses in Artificial Intelligence/Natural Language Processing and engineering ethics. They include information about course objectives, lecture plans, and the structure of course materials, alongside a definition of a \"topic\" from the message queue domain.\n",
+          "timestamp": "2025-11-15T01:54:01.922232",
+          "sources": [
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS907-Cloud Foundation Unit-3 DCM.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": "What are the main topics in my documents?",
+          "timestamp": "2025-11-15T02:07:18.675105",
+          "sources": []
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the provided documents, here's a summary of the main topics:\n\n## Course Related Topics\n\n*   **Course Objectives:**  Focuses on learning the fundamentals of natural language processing, discussing word-level analysis and different language models, and understanding the significance of syntactic and semantic analysis. The course also aims to teach discourse algorithms and various lexical resources (Source 3).\n\n*   **Lecture Plans:** Documents include detailed lecture plans. Source 1 outlines plans related to \"Senses of Engineering Ethics,\" \"Types of Inquiry,\" \"Moral Autonomy,\" \"Kohlberg's Theory,\" \"Gilligan's Theory,\" and \"Consensus and Controversy.\" Source 5 presents a lecture plan for Natural Language Processing that includes topics like \"Ambiguities in NLP\", \"Regular Expressions\" and \"Words - Corpora\". Lecture plans also include data about Number of Periods, Proposed Dates, Actual Dates, CO pertaining to each topic and the Taxonomy level along with the Mode of Delivery. (Source 1, Source 5)\n\n*   **Artificial Intelligence Course:** There are references to an \"Artificial Intelligence\" course with subject code 22AI005 (Source 3).\n\n## Document Structure and Table of Contents\n\n*   **Table of Contents Elements:** One document segment describes a table of contents outlining a course including sections like \"Contents,\" \"Course Objectives,\" \"Pre Requisites,\" \"Syllabus,\" \"Course Outcomes,\" \"CO-PO/PSO Mapping,\" \"Lecture Plan,\" \"Activity Based Learning,\" and \"Lecture Notes.\" (Source 4)\n\n## Natural Language Processing (NLP)\n* **Fundamental Concepts:** Topics related to Natural Language Processing are covered including ambiguities, regular expressions and corpora.\n\n## Ethics\n\n* **Engineering Ethics:** Topics relating to engineering ethics like Moral issues and moral dilemmas are referenced.\n\n## Topics in Message Queues\n\n* **Topic and Subscription:** Document 2 mentions the concept of a \"topic\" in the context of message queues, defining it as \"a named resource to which messages are sent by publishers.\"\n\nIn summary, the documents seem to be related to course planning, specifically including courses in Artificial Intelligence/Natural Language Processing and engineering ethics. They include information about course objectives, lecture plans, and the structure of course materials, alongside a definition of a \"topic\" from the message queue domain.\n",
+          "timestamp": "2025-11-15T02:07:18.724680",
+          "sources": [
+            {
+              "name": "22CS603 -Unit II Professional Ethics.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "22CS907-Cloud Foundation Unit-3 DCM.pdf",
+              "relevance": 0.95
+            },
+            {
+              "name": "NLP_UNIT_1.pdf",
+              "relevance": 0.95
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-11-15T01:54:01.767986",
+      "updated_at": "2025-11-15T02:07:18.724680",
+      "is_active": true
+    }
+  }
+}

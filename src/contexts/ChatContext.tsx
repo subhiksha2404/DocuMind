@@ -16,6 +16,7 @@ interface ChatContextType {
   isLoading: boolean;
   addMessage: (message: ChatMessage) => void;
   clearMessages: () => void;
+  setLoading: (loading: boolean) => void;
 }
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
@@ -51,13 +52,20 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
     setIsLoading(false);
   };
 
+  const setLoading = (loading: boolean) => {
+    setIsLoading(loading);
+  };
+
+  const value = {
+    messages,
+    isLoading,
+    addMessage,
+    clearMessages,
+    setLoading
+  };
+
   return (
-    <ChatContext.Provider value={{
-      messages,
-      isLoading,
-      addMessage,
-      clearMessages
-    }}>
+    <ChatContext.Provider value={ value }>
       {children}
     </ChatContext.Provider>
   );

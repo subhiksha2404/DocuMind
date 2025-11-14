@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - CHROMA_DB_PATH=/app/chroma_db
+      - LOG_FILE_PATH=/app/logs/app.log
+      - PYTHONPATH=/app
+    volumes:
+      - chroma_data:/app/chroma_db
+      - upload_data:/app/user_uploads
+      - log_data:/app/logs
+      - chat_history_data:/app/chat_history
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    mem_limit: 1g
+    cpus: 1.0
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    mem_limit: 256m
+    cpus: 0.5
+
+volumes:
+  chroma_data:
+  upload_data:
+  log_data:
+  chat_history_data:
+
+networks:
+  default:
+    name: documind-network
+    driver: bridge

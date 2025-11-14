@@ -1,6 +1,8 @@
 // src/services/api.ts
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.PROD 
+  ? '/api'  // Will be proxied through nginx
+  : 'http://localhost:8000';
 
 export interface ProgressMessage {
   stage: string;
@@ -295,30 +297,52 @@ class DocumentService {
       return { existing: [] };
     }
   }
+  
+  async createChatSession(title: string) {
+    const response = await fetch(`${API_BASE}/chat-sessions`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title })
+    });
+    return response.json();
+  }
 
-  async chatWithLangGraph(query: string, nContextChunks: number = 5): Promise<ChatResponse> {
-    const params = new URLSearchParams();
-    params.append('query', query);
-    params.append('n_context_chunks', nContextChunks.toString());
+  async getChatSessions() {
+    const response = await fetch(`${API_BASE}/chat-sessions`);
+    return response.json();
+  }
 
-    try {
-      console.log('🚀 Using LangGraph endpoint...');
-      const response = await fetch(`${API_BASE}/chat-langgraph?${params}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`LangGraph chat failed: ${response.statusText}`);
-      }
-
-      return response.json();
-    } catch (error) {
-      console.error('LangGraph failed, falling back to regular chat:', error);
-      return this.chat(query, undefined, nContextChunks);
+  async getChatSession(sessionId: string) {
+    const response = await fetch(`${API_BASE}/chat-sessions/${sessionId}`);
+    if (!response.ok) {
+      throw new Error(`Failed to get chat session: ${response.statusText}`);
     }
+    return response.json();
+  }
+
+  async addChatMessage(sessionId: string, message: { role: string; content: string; sources?: any[] }) {
+    const response = await fetch(`${API_BASE}/chat-sessions/${sessionId}/messages`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(message)
+    });
+    return response.json();
+  }
+
+  async deleteChatSession(sessionId: string) {
+    const response = await fetch(`${API_BASE}/chat-sessions/${sessionId}`, {
+      method: 'DELETE'
+    });
+    return response.json();
+  }
+
+  async updateChatSessionTitle(sessionId: string, title: string) {
+    const response = await fetch(`${API_BASE}/chat-sessions/${sessionId}/title`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title })
+    });
+    return response.json();
   }
   // Cleanup WebSocket
   disconnect(): void {

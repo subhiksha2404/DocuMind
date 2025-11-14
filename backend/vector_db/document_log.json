@@ -395,5 +395,146 @@
             "pages": 8
         },
         "file_hash": "06a50b04e7d33f95daecb0b36d1e85bf"
+    },
+    {
+        "filename": "NLP_UNIT_1.pdf",
+        "chunks_stored": 357,
+        "upload_time": "2025-10-14 05:56:04.562263",
+        "metadata": {
+            "title": "Microsoft Word - RMK Group 20AI702 NLP Unit 1_shanthi",
+            "author": "user",
+            "pages": 106,
+            "creation_date": "D:20250606090529+00'00'",
+            "modification_date": "D:20250606090529+00'00'"
+        },
+        "file_hash": "76bac27282871ad40631e4294abd1657"
+    },
+    {
+        "filename": "Publication document guildelines (1).pdf",
+        "chunks_stored": 13,
+        "upload_time": "2025-10-16 14:22:20.761216",
+        "metadata": {
+            "title": "Untitled",
+            "author": "DELL",
+            "pages": 5,
+            "creation_date": "D:20251001155139+05'30'",
+            "modification_date": "D:20251001155139+05'30'"
+        },
+        "file_hash": "d9ff95fdb241490633c15f0af5df09cb"
+    },
+    {
+        "filename": "Deep Learning-Powered VR Surgery Training  A Next-Gen Approach for Medical Skill Development (1).pdf",
+        "chunks_stored": 85,
+        "upload_time": "2025-10-17 01:10:20.631842",
+        "metadata": {
+            "title": "Microsoft Word - Artificial Intelligence Enhanced Virtual Reality Surgery Training[2]",
+            "author": "",
+            "pages": 8,
+            "creation_date": "D:20250312085551+05'30'",
+            "modification_date": "D:20250312085551+05'30'"
+        },
+        "file_hash": "ca54692f8373c1a2484bfbdb3be140c7"
+    },
+    {
+        "filename": "231093760-SOLITON-TECHNOLOGIES-Questions-With-Answers.pdf",
+        "chunks_stored": 32,
+        "upload_time": "2025-10-17 01:11:40.149873",
+        "metadata": {
+            "title": "Microsoft PowerPoint - SOLITON TECHNOLOGIES questions with answers",
+            "author": "Veera",
+            "pages": 18,
+            "creation_date": "D:20140624070941",
+            "modification_date": "D:20140624070941"
+        },
+        "file_hash": "00091e468b0399a4a6d5ae6df5a8c75f"
+    },
+    {
+        "filename": "Latest-Soliton-Technologies-Written-Placement-Test-Questions.pdf",
+        "chunks_stored": 8,
+        "upload_time": "2025-10-17 01:11:41.626995",
+        "metadata": {
+            "title": "Untitled",
+            "author": "Unknown",
+            "pages": 2,
+            "creation_date": "",
+            "modification_date": ""
+        },
+        "file_hash": "8d89340d109cfaa0b22bc1b787c054c6"
+    },
+    {
+        "filename": "Solition Questions.pdf",
+        "chunks_stored": 3,
+        "upload_time": "2025-10-17 01:11:42.925531",
+        "metadata": {
+            "title": "Untitled",
+            "author": "Unknown",
+            "pages": 2,
+            "creation_date": "D:20250311213834",
+            "modification_date": ""
+        },
+        "file_hash": "0a182640414cea0b5fb9cbf6e9bdc41c"
+    },
+    {
+        "filename": "Document Ingestion Pipeline (backen.txt",
+        "chunks_stored": 7,
+        "upload_time": "2025-11-02 11:46:36.401378",
+        "metadata": {
+            "title": "Document Ingestion Pipeline (backen.txt",
+            "author": "Unknown",
+            "pages": 0
+        },
+        "file_hash": "17381d9c29b48beb784a4616c869da5b"
+    },
+    {
+        "filename": "22CD701-MAD-UNIT-5.pdf",
+        "chunks_stored": 195,
+        "upload_time": "2025-11-11 13:28:09.383844",
+        "metadata": {
+            "title": "PowerPoint Presentation",
+            "author": "neo",
+            "pages": 71,
+            "creation_date": "D:20251015015941+05'30'",
+            "modification_date": "D:20251015015941+05'30'"
+        },
+        "file_hash": "5328164d4cbd3dc4ebce56c446a20461"
+    },
+    {
+        "filename": "MLA HACKATHON - LOAN DEFAULT PREDICTION REPORT.pdf",
+        "chunks_stored": 16,
+        "upload_time": "2025-11-12 22:36:07.292091",
+        "metadata": {
+            "title": "MLA HACKATHON - LOAN DEFAULT PREDICTION REPORT",
+            "author": "Unknown",
+            "pages": 5,
+            "creation_date": "",
+            "modification_date": ""
+        },
+        "file_hash": "ff2df03d0f4244970bb927c6d0d119f1"
+    },
+    {
+        "filename": "outosecure (2).pdf",
+        "chunks_stored": 7,
+        "upload_time": "2025-11-12 22:39:01.056533",
+        "metadata": {
+            "title": "outosecure",
+            "author": "Ren PJ",
+            "pages": 9,
+            "creation_date": "D:20251103110235+00'00'",
+            "modification_date": "D:20251103110233+00'00'"
+        },
+        "file_hash": "fbdc52ea14c3e9faaa1b17e82cd204db"
+    },
+    {
+        "filename": "DIGITAL NOTES UNIT IV_22EC002- EMBEDDED SYSTEMS.pdf",
+        "chunks_stored": 259,
+        "upload_time": "2025-11-13 10:18:50.779858",
+        "metadata": {
+            "title": "Untitled",
+            "author": "Unknown",
+            "pages": 106,
+            "creation_date": "D:20250901165157+00'00'",
+            "modification_date": "D:20250901165158Z"
+        },
+        "file_hash": "9c6b9e63231b1cecae866a1b748ab9e1"
     }
 ]

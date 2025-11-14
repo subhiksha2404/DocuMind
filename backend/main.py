@@ -23,11 +23,10 @@ from docx import Document
 from dotenv import load_dotenv
 import pandas as pd
 from local_model_manager import model_manager
-
+from chat_history import chat_history_manager
 from chromadb import PersistentClient
 from chromadb.utils import embedding_functions
 
-from agents.orchestrator import AgentOrchestrator
 from agents.langgraph_orchestrator import LangGraphOrchestrator
 # Import LangChain text splitter
 try:
@@ -60,16 +59,16 @@ app.add_middleware(
 
 DB_BASE_DIR = Config.VECTORSTORE_PATH
 
-CHROMA_DB_DIR = Config.CHROMA_DB_DIR
-LOG_FILE_PATH = Config.LOG_FILE_PATH
+CHROMA_DB_DIR = Config.CHROMA_DB_DIR #os.getenv("CHROMA_DB_PATH", "./chroma_db")
+LOG_FILE_PATH = Config.LOG_FILE_PATH #os.getenv("LOG_FILE_PATH", "./logs/app.log")
 EMBEDDING_MODELS = Config.EMBEDDING_MODELS
 INFERENCE_MODELS = Config.INFERENCE_MODELS
 
 # Ensure required directories exist
 os.makedirs(DB_BASE_DIR, exist_ok=True)
 os.makedirs(CHROMA_DB_DIR, exist_ok=True)
+# os.makedirs(os.path.dirname(LOG_FILE_PATH), exist_ok=True)
 
-agent_orchestrator = AgentOrchestrator()
 langgraph_orchestrator = LangGraphOrchestrator()
 
 # ---------- WebSocket Manager for Progress Updates ----------
@@ -705,20 +704,16 @@ async def get_inference_models():
     return {"models": list(models.keys())}
 
 @app.post("/chat")
-async def chat_with_documents(query: str, conversation_id: Optional[str] = None, n_context_chunks: int = 5):
-    """Chat with documents using RAG."""
+async def chat_with_documents( query: str, conversation_id: Optional[str] = None, n_context_chunks: int = 5):
+    """Chat with documents using LangGraph (now default)"""
     try:
-        # Use the agent orchestrator (same functionality, better organization)
-        response_data = agent_orchestrator.process_query(query, n_context_chunks)
-        
-        # Add the current model info (same as before)
+        response_data = langgraph_orchestrator.process_query(query, n_context_chunks)
         response_data["model_used"] = current_inference_model
-        
         return response_data
-        
     except Exception as e:
-        logging.error(f"Chat failed: {e}")
-        raise HTTPException(status_code=500, detail=f"Chat failed: {str(e)}")
+        logging.error(f"LangGraph chat failed: {e}")
+        # Fallback to simple RAG if LangGraph fails
+        return await simple_chat_with_documents(query, conversation_id, n_context_chunks)
     
 @app.post("/simple-chat")
 async def simple_chat_with_documents(query: str, conversation_id: Optional[str] = None, n_context_chunks: int = 5):
@@ -801,3 +796,92 @@ async def debug_chroma():
         }
     except Exception as e:
         return {"error": str(e)}
+    
+@app.get("/health")
+async def health_check():
+    return {
+        "status": "healthy", 
+        "service": "DocuMind API",
+        "environment": os.getenv("ENVIRONMENT", "development")
+    }
+    
+@app.get("/chat-sessions")
+async def get_chat_sessions():
+    sessions = chat_history_manager.get_user_sessions("default_user")
+    return {"sessions": sessions}
+
+@app.get("/chat-sessions/{session_id}")
+async def get_chat_session(session_id: str):
+    """Get specific chat session by ID"""
+    try:
+        print(f"🔍 [BACKEND] Looking for session: {session_id}")
+        
+        session = chat_history_manager.get_session("default_user", session_id)
+        
+        print(f"🔍 [BACKEND] Session found: {session is not None}")
+        
+        if not session:
+            print(f"❌ [BACKEND] Session {session_id} not found")
+            raise HTTPException(status_code=404, detail="Session not found")
+        
+        print(f"✅ [BACKEND] Returning session with {len(session.messages)} messages")
+        return session
+        
+    except Exception as e:
+        print(f"❌ [BACKEND] Error getting session: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+    
+@app.post("/chat-sessions")
+async def create_chat_session(session_data: dict):
+    """Create a new chat session"""
+    try:
+        session = chat_history_manager.create_session(
+            "default_user",  # Simple - no auth needed
+            session_data.get("title", "New Chat")
+        )
+        return session
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+@app.post("/chat-sessions/{session_id}/messages")
+async def add_chat_message(session_id: str, message_data: dict):
+    """Add a message to chat session"""
+    try:
+        session = chat_history_manager.add_message(
+            "default_user",
+            session_id,
+            message_data.get("role", "user"),
+            message_data.get("content", ""),
+            message_data.get("sources", [])
+        )
+        return session
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.delete("/chat-sessions/{session_id}")
+async def delete_chat_session(session_id: str):
+    """Delete a chat session"""
+    try:
+        success = chat_history_manager.delete_session("default_user", session_id)
+        if not success:
+            raise HTTPException(status_code=404, detail="Session not found")
+        return {"status": "deleted"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.put("/chat-sessions/{session_id}/title")
+async def update_session_title(session_id: str, title_data: dict):
+    """Update chat session title"""
+    try:
+        session = chat_history_manager.update_session_title(
+            "default_user",
+            session_id,
+            title_data.get("title", "Untitled")
+        )
+        return session
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
